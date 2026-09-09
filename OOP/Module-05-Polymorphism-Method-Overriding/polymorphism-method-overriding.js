@@ -25,5 +25,11 @@ const car = new Car("Toyota");
 const motorcycle = new Motorcycle("Honda");
 
 // Same method name, different behavior
-car.start();
-motorcycle.start();
+// car.start();
+// motorcycle.start();
+
+// Array of objects
+const vehicles = [car, motorcycle];
+for (const vehicle of vehicles) {
+  vehicle.start();
+}
