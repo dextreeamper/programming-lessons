@@ -13,7 +13,6 @@ class Car extends Vehicle {
     console.log(`${this.brand} car is driving.`);
   }
 }
-
 class Motorcycle extends Vehicle {
   ride() {
     console.log(`${this.brand} motorcycle is riding.`);
