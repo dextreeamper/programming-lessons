@@ -1,54 +1,34 @@
-// async function getUser() {
-//   try {
-//     console.log("PENDING...");
-//     const response = await fetch(
-//       "https://jsonplaceholder.typicode.com/users/1",
-//     );
-//     const data = await response.json();
-//     //object destructuring
-//     const {
-//       name,
-//       username,
-//       email,
-//       address: { street, suite, city, zipcode },
-//     } = data;
-
-//     console.log("FULFILLED...");
-
-//     console.log("name:", name);
-//     console.log("username:", username);
-//     console.log("email:", email);
-//     console.log(`address: ${street}, ${suite}, ${city}, ${zipcode}`);
-//   } catch (error) {
-//     console.log("REJECTED...");
-//     console.log("Erroooor: ", error);
-//   }
-// }
-// getUser();
-
-async function getComments() {
+async function getUser() {
   try {
     const response = await fetch(
       "https://jsonplaceholder.typicode.com/posts/1/comments",
     );
     const data = await response.json();
-    data.forEach((comment) => {
-      const { name, email, body } = comment;
-      console.log("Name: ", name);
-      console.log("Email: ", email);
-      console.log("Body: ", body);
-      console.log("==========================");
-    });
+    let comments = data;
+
+    // comments.forEach((comment) => {
+    //   const { name, email, body } = comment;
+
+    //   console.log("name: ", name);
+    //   console.log("email: ", email);
+    //   console.log("body: ", body);
+    //   console.log("=====================");
+    // });
+
+    let findById = comments.find((comment) => comment.id === 1);
+    const { name, email, body } = findById;
+    console.log("name: ", name);
+    console.log("email: ", email);
+    console.log("body: ", body);
   } catch (error) {
-    console.log(error);
+    console.log("Errooor: ", error);
   }
 }
-getComments();
+getUser();
 
 // class Vehicle {
-//   constructor(brand, color) {
+//   constructor(brand) {
 //     this.brand = brand;
-//     this.color = color;
 //   }
 //   start() {
 //     console.log("starting from parent class");
@@ -56,19 +36,20 @@ getComments();
 // }
 // class Car extends Vehicle {
 //   start() {
-//     console.log(`${this.brand} starting from parent class`);
+//     console.log(`${this.brand} starting from child class`);
 //   }
 // }
 // class Motorcycle extends Vehicle {
 //   start() {
-//     console.log(`${this.brand} starting from parent class`);
+//     console.log(`${this.brand} starting from child class`);
 //   }
 // }
+// // parameter -> property -> arguments
 
 // const car = new Car("Hyundai");
-// const motorcycle = new Motorcycle("Honda");
-
+// const motorcycle = new Motorcycle("Rusi");
 // const vehicles = [car, motorcycle];
+
 // for (const vehicle of vehicles) {
 //   vehicle.start();
 // }
