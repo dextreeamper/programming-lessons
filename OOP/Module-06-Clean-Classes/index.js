@@ -15,13 +15,14 @@ class CartItem {
 
   subtotal() {
     return this.product.price * this.quantity;
+    // 20(ballpen) x qty(6) = 120
   }
 }
 
 // Shopping cart class
 class ShoppingCart {
   constructor() {
-    this.items = [];
+    this.items = []; // empty array
   }
 
   add(product, quantity) {
