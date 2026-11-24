@@ -7,6 +7,6 @@ const students = [
 // first activity - pop
 // second activity - filter display only the age === 19
 
-students.pop();
+// students.pop();
 
 console.log(students);
